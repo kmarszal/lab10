@@ -6,10 +6,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="chatControls">
+	<div id="leave" style="visibility: hidden">
+    	<button id="leavech">leave channel</button>
+    </div>
+	<div id="usernamebox">
+		<input id="username" placeholder="What is your name?">
+		<button id="confirmusername">continue</button>
+	</div>
+    <div id="chatControls" style="visibility: hidden">
         <input id="message" placeholder="Type your message">
         <button id="send">Send</button>
     </div>
+    <div id="channelControls" style="visibility: hidden">
+    	<button id="newchan">new</button>
+    	<input id="chname" placeholder="Channel name">
+    </div>
+    <ul id="channellist"> <!-- Built by JS --> </ul>
     <ul id="userlist"> <!-- Built by JS --> </ul>
     <div id="chat">    <!-- Built by JS --> </div>
     <script src="websocketDemo.js"></script>

@@ -33,6 +33,11 @@ li {
     margin: 0 0 5px 0
 }
 
+#usernamebox{
+	overflow: auto;
+    margin: 0 0 5px 0
+}
+
 #userlist {
     position: fixed;
     left: 50%;
@@ -42,6 +47,28 @@ li {
     padding: 5px 10px;
     width: 150px;
     top: 11px;
+}
+
+#channellist {
+    position: fixed;
+    left: 60%;
+    list-style: none;
+    margin-left: 250px;
+    background: #f0f0f9;
+    padding: 5px 10px;
+    width: 150px;
+    top: 11px;
+}
+
+#leavech{
+	position: fixed;
+    float: left;
+    left: 83%;
+}
+
+
+#channelContorols{
+	overflow: auto;
 }
 
 #chat p {
