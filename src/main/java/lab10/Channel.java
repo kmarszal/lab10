@@ -17,6 +17,7 @@ public class Channel {
 	private int index;
 	private String name;
 	protected Map<Session, String> userUsernameMap;
+	protected Chat chat;
 
 	@Override
 	public int hashCode() {
@@ -60,7 +61,8 @@ public class Channel {
 		return index;
 	}
 
-	public Channel(String name, int ind) {
+	public Channel(String name, int ind, Chat chat) {
+		this.chat = chat;
 		this.index = ind;
 		this.name = name;
 		this.userUsernameMap = new ConcurrentHashMap<>();
@@ -87,7 +89,7 @@ public class Channel {
             	session.getRemote().sendString(String.valueOf(new JSONObject()
                		.put("userMessage", createHtmlMessageFromSender(sender, message))
                    	.put("userlist", userUsernameMap.values())
-                   	.put("chlist", Chat.Channels.keySet())
+                   	.put("chlist", chat.getChannelKeySet())
                		));
             	} catch (Exception e) {
                 e.printStackTrace();

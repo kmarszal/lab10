@@ -56,7 +56,7 @@ public class Bot {
 			}
 			JSONObject weather = JSONParser.getWeather();
 			String weatherstr = "" + weather.getJSONArray("weather").getJSONObject(0).getString("description") + 
-					'\n' + "temperatura: " + (weather.getJSONObject("main").getDouble("temp") - 273) + "°C" + '\n' +
+					'\n' + "temperatura: " + (weather.getJSONObject("main").getDouble("temp") - 273.15) + "°C" + '\n' +
 					"cisnienie: " + weather.getJSONObject("main").getInt("pressure") + "hPa" + '\n' +
 					"wilgotność powietrza: " + weather.getJSONObject("main").getInt("humidity") + "%" + '\n';
 			return weatherstr + "Dobra pogoda na Igrzyska Olimpijskie";

@@ -8,9 +8,9 @@ import org.json.JSONObject;
 
 public class BotChannel extends Channel{
 	
-	public BotChannel(int ind)
+	public BotChannel(int ind,Chat chat)
 	{
-		super("Bot",ind);
+		super("Bot",ind,chat);
 	}
 	
 	@Override
@@ -24,7 +24,7 @@ public class BotChannel extends Channel{
             	session.getRemote().sendString(String.valueOf(new JSONObject()
                		.put("userMessage", createHtmlMessageFromSender(sender, message))
                    	.put("userlist", users)
-                   	.put("chlist", Chat.Channels.keySet())
+                   	.put("chlist", chat.getChannelKeySet())
                		));
             	} catch (Exception e) {
                 e.printStackTrace();
